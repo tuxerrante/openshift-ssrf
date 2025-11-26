@@ -1,32 +1,26 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+# Whitelist approach: ignore everything except the files we explicitly allow below.
+# Ignore everything
+*
 
-# Test binary, built with `go test -c`
-*.test
+# Un-ignore directories so we can allow files inside folders
+!*/
 
-# Code coverage profiles and other test artifacts
-*.out
-coverage.*
-*.coverprofile
-profile.cov
+# Keep the .gitignore tracked
+!.gitignore
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# Allow Go source files anywhere in the repo
+!*.go
+!**/*.go
 
-# Go workspace file
-go.work
-go.work.sum
+# Allow module files
+!go.mod
+!go.sum
 
-# env file
-.env
+# Allow README / readme files (README, README.md, readme, readme.md, etc.)
+!README
+!README.*
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# Allow json files inside the output directory
+!output/
+!output/*.json
+!output/**/*.json

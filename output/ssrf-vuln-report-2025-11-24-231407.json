@@ -1,0 +1,374 @@
+{
+  "test_run_id": "1764022447",
+  "cluster_info": {
+    "version": "v1.33.5",
+    "environment": "OpenShift Local (CRC)",
+    "namespace": "ssrf",
+    "service_network": "10.217.4.1",
+    "internal_services": [
+      "kubernetes.default.svc:443 (10.217.4.1)",
+      "api.openshift-apiserver.svc:443 (10.217.5.211)",
+      "image-registry.openshift-image-registry.svc:5000 (10.217.5.148)",
+      "console.openshift-console.svc:443 (10.217.5.227)"
+    ]
+  },
+  "test_results": [
+    {
+      "test_name": "Localhost - Etcd",
+      "target_address": "127.0.0.1:2379/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 127.0.0.1:2379/v2:latest: Get \"http://127.0.0.1:2379/v2/\": dial tcp 127.0.0.1:2379: connect: connection refused",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "Etcd database",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": true,
+      "information_leaked": [
+        "Network connection attempted to 127.0.0.1",
+        "Connection refused - Port closed but IP reachable"
+      ],
+      "response_received": false
+    },
+    {
+      "test_name": "Localhost - Metrics",
+      "target_address": "127.0.0.1:9090/v2",
+      "was_blocked": false,
+      "error_message": "imagestreamimports.image.openshift.io \"test-1764022415129\" already exists",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "HIGH",
+      "attack_vector": "Prometheus metrics",
+      "reached_api_server": true,
+      "validation_stage": "Unknown admission",
+      "network_attempted": false,
+      "response_received": false
+    },
+    {
+      "test_name": "Azure Metadata - instance",
+      "target_address": "169.254.169.254:80/v2",
+      "was_blocked": false,
+      "error_message": "imagestreamimports.image.openshift.io \"test-1764022415129\" already exists",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "Azure instance metadata",
+      "reached_api_server": true,
+      "validation_stage": "Unknown admission",
+      "network_attempted": false,
+      "response_received": false
+    },
+    {
+      "test_name": "Localhost - Kubelet",
+      "target_address": "127.0.0.1:10250/v2",
+      "was_blocked": false,
+      "error_message": "imagestreamimports.image.openshift.io \"test-1764022415129\" already exists",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "Kubelet API",
+      "reached_api_server": true,
+      "validation_stage": "Unknown admission",
+      "network_attempted": false,
+      "response_received": false
+    },
+    {
+      "test_name": "Localhost - HTTP",
+      "target_address": "127.0.0.1:80/v2",
+      "was_blocked": false,
+      "error_message": "imagestreamimports.image.openshift.io \"test-1764022415129\" already exists",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "HIGH",
+      "attack_vector": "Local HTTP services",
+      "reached_api_server": true,
+      "validation_stage": "Unknown admission",
+      "network_attempted": false,
+      "response_received": false
+    },
+    {
+      "test_name": "GCP Metadata - /computeMetadata/v1/",
+      "target_address": "metadata.google.internal:80/v2",
+      "was_blocked": false,
+      "error_message": "imagestreamimports.image.openshift.io \"test-1764022415129\" already exists",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "GCP metadata service",
+      "reached_api_server": true,
+      "validation_stage": "Unknown admission",
+      "network_attempted": false,
+      "response_received": false
+    },
+    {
+      "test_name": "GCP Metadata - project-id",
+      "target_address": "metadata.google.internal:80/v2",
+      "was_blocked": false,
+      "error_message": "imagestreamimports.image.openshift.io \"test-1764022415129\" already exists",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "GCP project ID",
+      "reached_api_server": true,
+      "validation_stage": "Unknown admission",
+      "network_attempted": false,
+      "response_received": false
+    },
+    {
+      "test_name": "Localhost - Alt HTTP",
+      "target_address": "127.0.0.1:8080/v2",
+      "was_blocked": false,
+      "error_message": "imagestreamimports.image.openshift.io \"test-1764022415129\" already exists",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "HIGH",
+      "attack_vector": "Development services",
+      "reached_api_server": true,
+      "validation_stage": "Unknown admission",
+      "network_attempted": false,
+      "response_received": false
+    },
+    {
+      "test_name": "K8s API - /version",
+      "target_address": "10.217.4.1:443/v2",
+      "was_blocked": false,
+      "error_message": "imagestreamimports.image.openshift.io \"test-1764022415129\" already exists",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "HIGH",
+      "attack_vector": "Kubernetes version disclosure",
+      "reached_api_server": true,
+      "validation_stage": "Unknown admission",
+      "network_attempted": false,
+      "response_received": false
+    },
+    {
+      "test_name": "K8s API - /healthz",
+      "target_address": "10.217.4.1:443/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 10.217.4.1:443/v2:latest: error parsing HTTP 403 response body: no error details found in HTTP response body: \"{\\n  \\\"kind\\\": \\\"Status\\\",\\n  \\\"apiVersion\\\": \\\"v1\\\",\\n  \\\"metadata\\\": {},\\n  \\\"status\\\": \\\"Failure\\\",\\n  \\\"message\\\": \\\"forbidden: User \\\\\\\"system:anonymous\\\\\\\" cannot get path \\\\\\\"/v2/v2/manifests/latest\\\\\\\"\\\",\\n  \\\"reason\\\": \\\"Forbidden\\\",\\n  \\\"details\\\": {},\\n  \\\"code\\\": 403\\n}\"",
+      "timestamp": "2025-11-24T23:13:35.2300408+01:00",
+      "severity": "MEDIUM",
+      "attack_vector": "Health check endpoint",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": false,
+      "information_leaked": [
+        "HTTP 403 - Service exists and responding"
+      ],
+      "response_received": true,
+      "http_status_code": "403 Forbidden"
+    },
+    {
+      "test_name": "K8s API - /api",
+      "target_address": "10.217.4.1:443/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 10.217.4.1:443/v2:latest: error parsing HTTP 403 response body: no error details found in HTTP response body: \"{\\n  \\\"kind\\\": \\\"Status\\\",\\n  \\\"apiVersion\\\": \\\"v1\\\",\\n  \\\"metadata\\\": {},\\n  \\\"status\\\": \\\"Failure\\\",\\n  \\\"message\\\": \\\"forbidden: User \\\\\\\"system:anonymous\\\\\\\" cannot get path \\\\\\\"/v2/v2/manifests/latest\\\\\\\"\\\",\\n  \\\"reason\\\": \\\"Forbidden\\\",\\n  \\\"details\\\": {},\\n  \\\"code\\\": 403\\n}\"",
+      "timestamp": "2025-11-24T23:13:35.3300376+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "Kubernetes API discovery",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": false,
+      "information_leaked": [
+        "HTTP 403 - Service exists and responding"
+      ],
+      "response_received": true,
+      "http_status_code": "403 Forbidden"
+    },
+    {
+      "test_name": "K8s API - /apis",
+      "target_address": "10.217.4.1:443/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 10.217.4.1:443/v2:latest: error parsing HTTP 403 response body: no error details found in HTTP response body: \"{\\n  \\\"kind\\\": \\\"Status\\\",\\n  \\\"apiVersion\\\": \\\"v1\\\",\\n  \\\"metadata\\\": {},\\n  \\\"status\\\": \\\"Failure\\\",\\n  \\\"message\\\": \\\"forbidden: User \\\\\\\"system:anonymous\\\\\\\" cannot get path \\\\\\\"/v2/v2/manifests/latest\\\\\\\"\\\",\\n  \\\"reason\\\": \\\"Forbidden\\\",\\n  \\\"details\\\": {},\\n  \\\"code\\\": 403\\n}\"",
+      "timestamp": "2025-11-24T23:13:35.4302117+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "Kubernetes API groups",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": false,
+      "information_leaked": [
+        "HTTP 403 - Service exists and responding"
+      ],
+      "response_received": true,
+      "http_status_code": "403 Forbidden"
+    },
+    {
+      "test_name": "AWS Metadata - instance-identity",
+      "target_address": "169.254.169.254:80/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 169.254.169.254:80/v2:latest: Get \"http://169.254.169.254:80/v2/\": dial tcp 169.254.169.254:80: connect: connection refused",
+      "timestamp": "2025-11-24T23:13:35.5301782+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "AWS instance identity (account ID, region)",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": true,
+      "information_leaked": [
+        "Network connection attempted to 169.254.169.254",
+        "Connection refused - Port closed but IP reachable"
+      ],
+      "response_received": false
+    },
+    {
+      "test_name": "AWS Metadata - /latest/",
+      "target_address": "169.254.169.254:80/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 169.254.169.254:80/v2:latest: Get \"http://169.254.169.254:80/v2/\": dial tcp 169.254.169.254:80: connect: connection refused",
+      "timestamp": "2025-11-24T23:13:35.6303518+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "AWS metadata service root",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": true,
+      "information_leaked": [
+        "Network connection attempted to 169.254.169.254",
+        "Connection refused - Port closed but IP reachable"
+      ],
+      "response_received": false
+    },
+    {
+      "test_name": "AWS Metadata - user-data",
+      "target_address": "169.254.169.254:80/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 169.254.169.254:80/v2:latest: Get \"http://169.254.169.254:80/v2/\": dial tcp 169.254.169.254:80: connect: connection refused",
+      "timestamp": "2025-11-24T23:13:36.0311457+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "AWS user-data (may contain secrets)",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": true,
+      "information_leaked": [
+        "Network connection attempted to 169.254.169.254",
+        "Connection refused - Port closed but IP reachable"
+      ],
+      "response_received": false
+    },
+    {
+      "test_name": "AWS Metadata - credentials",
+      "target_address": "169.254.169.254:80/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 169.254.169.254:80/v2:latest: Get \"http://169.254.169.254:80/v2/\": dial tcp 169.254.169.254:80: connect: connection refused",
+      "timestamp": "2025-11-24T23:13:36.2304877+01:00",
+      "severity": "CRITICAL",
+      "attack_vector": "IAM credentials",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": true,
+      "information_leaked": [
+        "Network connection attempted to 169.254.169.254",
+        "Connection refused - Port closed but IP reachable"
+      ],
+      "response_received": false
+    },
+    {
+      "test_name": "Service Network Scan - +10",
+      "target_address": "10.217.4.11:443/v2",
+      "was_blocked": false,
+      "error_message": "imagestreamimports.image.openshift.io \"test-1764022415129\" already exists",
+      "timestamp": "2025-11-24T23:13:35.1298743+01:00",
+      "severity": "HIGH",
+      "attack_vector": "Service network scanning",
+      "reached_api_server": true,
+      "validation_stage": "Unknown admission",
+      "network_attempted": false,
+      "response_received": false
+    },
+    {
+      "test_name": "RFC1918 - 192.168.x gateway",
+      "target_address": "192.168.1.1:80/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 192.168.1.1:80/v2:latest: Get \"http://192.168.1.1:80/v2/\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+      "timestamp": "2025-11-24T23:13:35.7299406+01:00",
+      "severity": "HIGH",
+      "attack_vector": "Home/office router",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": true,
+      "information_leaked": [
+        "Network connection attempted to 192.168.1.1",
+        "Timeout - Network path exists"
+      ],
+      "response_received": false
+    },
+    {
+      "test_name": "RFC1918 - 172.16.x gateway",
+      "target_address": "172.16.0.1:80/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 172.16.0.1:80/v2:latest: Get \"http://172.16.0.1:80/v2/\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+      "timestamp": "2025-11-24T23:13:35.8304395+01:00",
+      "severity": "HIGH",
+      "attack_vector": "Corporate network",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": true,
+      "information_leaked": [
+        "Network connection attempted to 172.16.0.1",
+        "Timeout - Network path exists"
+      ],
+      "response_received": false
+    },
+    {
+      "test_name": "RFC1918 - 10.x gateway",
+      "target_address": "10.0.0.1:80/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 10.0.0.1:80/v2:latest: Get \"http://10.0.0.1:80/v2/\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+      "timestamp": "2025-11-24T23:13:35.9299601+01:00",
+      "severity": "HIGH",
+      "attack_vector": "Internal network gateway",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": true,
+      "information_leaked": [
+        "Network connection attempted to 10.0.0.1",
+        "Timeout - Network path exists"
+      ],
+      "response_received": false
+    },
+    {
+      "test_name": "Service Network Scan - +1",
+      "target_address": "10.217.4.2:443/v2",
+      "was_blocked": false,
+      "error_message": "Internal error occurred: 10.217.4.2:443/v2:latest: Get \"http://10.217.4.2:443/v2/\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+      "timestamp": "2025-11-24T23:13:36.1303603+01:00",
+      "severity": "HIGH",
+      "attack_vector": "Service network enumeration",
+      "reached_api_server": true,
+      "import_status": "FAILED",
+      "validation_stage": "Network attempt",
+      "network_attempted": true,
+      "information_leaked": [
+        "Network connection attempted to 10.217.4.2",
+        "Timeout - Network path exists"
+      ],
+      "response_received": false
+    }
+  ],
+  "summary": {
+    "total_tests": 21,
+    "reached_api_server": 21,
+    "network_attempts_detected": 9,
+    "http_responses_received": 3,
+    "information_leaked": 12,
+    "critical_severity": 11,
+    "high_severity": 9
+  },
+  "security_gaps": [
+    "No pre-connection IP validation - all addresses attempted",
+    "No blocking of RFC1918 private networks",
+    "No blocking of link-local addresses (169.254.0.0/16)",
+    "No blocking of loopback (127.0.0.1)",
+    "Service network IPs not protected",
+    "HTTP responses leak service existence and API structure"
+  ],
+  "key_findings": [
+    "K8s API - /healthz: 403 Forbidden",
+    "K8s API - /api: 403 Forbidden",
+    "K8s API - /apis: 403 Forbidden"
+  ],
+  "timestamp": "2025-11-24T23:14:07.1481206+01:00",
+  "duration": "32.0618548s"
+}
