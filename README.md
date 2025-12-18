@@ -1,3 +1,5 @@
+> ⚠️ __Hey!__ This vulnerability was officially recognized with **CVE-2025-14443**!
+
 # SSRF Security Assessment: OpenShift Image Import Path
 - [SSRF Security Assessment: OpenShift Image Import Path](#ssrf-security-assessment-openshift-image-import-path)
   - [Executive Summary](#executive-summary)
